@@ -1,0 +1,191 @@
+lesson-1:dataType
+	-Introduction
+	--Why have different types of data containers?
+	--bool
+	---Conditionals
+	--int
+	--float
+	--list
+	--tuple
+	--dictionaries
+	-Introduction to "loops"
+	--for loop
+	--while loop
+	--Recursion
+	-How to convert from one to another
+	-LAB
+
+Introduction
+	Different containers are used for different uses. Normally, it's safe to assume that someone will try to eat cereal out of a bowl, but not a collander since it has holes in the bottom. But when washing multiple vegetables and fruits, you would use a collander to help hold them in place while rinsing rather than washing them in a bowl (just to keep from the dirt getting back on them). Data-types work in a similar fashion. There are various types that each have their own use.
+
+	What and why are data types?
+		Data-types are a form of containers that hold different types of data. For instance, we covered Strings and Chars last time, both are a form of catch-all containers for display. But when trying to do math of any sort, sentences won't necessarily cut it. (The following explanations will be per Python, for lower-level languages, these will need to be revisited due to the nature of each data-type used in each level of the programming language tree).
+
+	bool - Boolean
+		The most basic values of computing, and True(1, On) and False(0, Off), the bit. This is often used for conditionals, but can be interpreted as an int.
+
+		Conditionals - if FIRST_VALUE (==, !=, <, >, <=, >=, is, not) CONDITIONAL_VALUE then do task(s)
+			How to use (3 types):
+				type 0:
+					VALUE = 1
+					if VALUE < 2:
+						print(ITERATED_VALUE + " is less than 2!")
+
+				type 1:
+					NAME = "Jake"
+					if NAME == "Jake":
+						print("The name is " + NAME + "!")
+	
+				type 2:
+					LETTER = 'a'
+					if LETTER is 'a':
+						print("LETTER is the same object as \'a\'")
+					if LETTER is LETTER:
+						print("LETTER is the same object as LETTER")
+
+			type 0 is used to compare two numbers, be it int or floats.
+
+			type 1 is used to compare two values if they are exactly the same in the value each is.
+
+			type 2 is used to compare two values in terms of whether they are the same object or not.
+
+	int - Integer
+		When trying to do math, it requires having a data-type that allows math to happen. For example, '1' + "21" is not going to equal 22 off the bat since one is a character and one is a string, but when they are converted into int's, then they can be used to equal 22.
+			i.e. number_int = 20
+
+	float - Floating point
+		When precision in numbers is very necessary, then there is a need for decimals. For example, without decimals, pi would just be and int. pi would be 3, not the slew of digits that makes up 3.14... With floating points, it allows for there to be a greater level of precision when doing math that has values falling between two integers.
+			i.e. number_float = 3.14
+
+	Collections of data
+		It's one thing to have a data-type for a value, but the next step is how to hold (and organize) the given data.
+
+	list - Collection of mutable values
+		This is a contaner that can hold multiple values. The values can be changed, added, and removed.
+			i.e. 
+				type:
+					Without values:
+						list_example = []
+
+					With values:
+						list_example = [20, 3, 15]
+
+	tuple - Collection of immutable values
+		This is a container that can also hold multiple values, but the values can only be changed or added, but not removed.
+			i.e.
+				type:
+					Without values:
+						tuple_example = ()
+
+					With values:
+						tuple_example = (20, 3, 15)
+
+	dictionary - Collection of mutable values, but with KEY and VALUE
+		This container holds multiple values, but each value must have a key that is associated with it. There can only be one 'value' for each key. It's used for easier selection of value desired.
+			i.e.
+				type:
+					Without values:
+						dict_example = {}
+
+					With values:
+						dict_example = {1:"Value one", "pi":3.14}
+
+	Loops and Recursion
+		Both Loops and Recursion are used to do a task multiple times, but they are accomplished in different forms.
+
+
+	In these examples, you will see how to get a value from a list using the iterated value/number.
+		for loop - Complete task(s) over a numerated amount of times
+			How to use (one type):
+				type 0:
+					for ITERATED_NUMBER in range(len(VALUE_LIST)):
+						print(VALUE_LIST[ITERATED_NUMBER])
+				type 1:
+					for ITERATED_VALUE in VALUE_LIST:
+						print(ITERATED_VALUE)
+	
+			ITERATED_NUMBER is the variable that is iterated(changed dynamically) with each time that the loop is completed. The number always starts at 0, and ends one value less than MAX_RANGE.
+	
+			However
+	
+			ITERATED_VALUE is the variiable that's iterated the same way, but since it is iterating via the list or tuple, ITERATED_VALUE is the current value in the list rather than the list.
+	
+		while loop - Complete task(s) until a condition is reached
+			How to use (Two types):
+				type 0:
+					ITERATED_NUMBER = 0
+					while(ITERATED_NUMBER < len(VALUE_LIST)):
+						print(VALUE_LIST[ITERATED_NUMBER])
+						ITERATED_NUMBER += 1
+	
+				type 1:
+					ITERATED_NUMBER = 0
+					while(True):
+						print(VALUE_LIST[ITERATED_NUMBER])
+						if ITERATED_NUMBER == len(VALUE_LIST)-1:
+							break
+						ITERATED_NUMBER += 1
+	
+		while(ITERATED_NUMBER < len(VALUE_LIST)) checks if the value meets the condition set in parethesis every time that the task(s) complete.
+
+		However,
+
+		while(True) runs until any conditional set in the task(s) is met, then make sure to put a break, otherwise it won't break from the loop and will continue until the script crashes, or the computer crashes.
+
+	Recursion - Using a function to call itself until conditional is met
+		How to use:
+			math_function(x):
+				if x < 3:
+					return x
+				else:
+					math_function(x + 1)
+
+		Recursion is used in place of loops in the case that iteration becomes more complex than necessary.
+
+	Conversion
+		Now that we've covered data-types, we look into conversions.
+
+		int to char, and char to int
+			CHAR = chr(INT)
+			INT = ord(CHAR)
+			
+			or convert char to the ASCII code the char belongs to
+				INT = int(CHAR)
+
+		int to float, float to int
+			FLOAT = float(INT)
+			INT = int(FLOAT)
+
+		string to list, list to string
+			LIST = list(STRING)
+			STRING = ''.join(LIST)
+
+		boolean to int, int to boolean
+			INT = int(BOOLEAN)
+			BOOLEAN = bool(INT)
+
+	Onto the lab!!
+		Complete the following:
+			- Create a proper main python file.
+			- Make two tuple variables with different numbers in each one.
+			- Make a for loop that lasts the length of the first tuple made using the len() function.
+			-- Make another for loop, but with the len() of the second tuple.
+			--- (With the example variables being t0 and t1) Print the equation and what the outcome is from it for...
+				i.e. `t0[i] + t1[j] = `, t0[i] + t1[j] is printed to be `3 + 4 = 7`
+			---- Addition
+			---- Subtraction
+			---- Multiplication
+			---- Division
+			- Make one more for loop with the range of the list variable's length.
+			-- Output each value in the loop.
+
+		CHALLENGE FROM HERE:
+			- Make the two full tuples empty lists
+			- Take input from the user to fill each list with while(True) loop
+			-- Make sure that the same number is only entered once, otherwise they will need to 
+			-- Convert the value to int() or float() based on whether the input has a `.`
+			--- But break the loops if the user enters `END`
+			- Complete the same tasks from the main lab, but instead of appending all values into the same list, create dictionary keys by putting the current math function being done to get the value, then put the outcome as the output.
+			-- DICT = {"list0[val_iteration0] + list1[val_iteration1]":list0+list1}
+			- Finally, print each key from the dictionary, and the value
+			-- String format output to "5 + 3 = 8"

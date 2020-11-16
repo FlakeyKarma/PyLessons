@@ -1,0 +1,113 @@
+lesson-2:funClass
+	-Introduction
+	--functions
+	---How to define
+	---How to call
+	--class
+	---How to define
+	---The `self` variable
+	---How to call
+	---private & public
+	-LAB
+Intro
+	When working on something that you know well, like washing laundry, do you constantly think about what you're doing while completing it? Or do you find yourself thinking about something else while washing laundry? Often we find ourselves thinking of something else because we already know what we need to do to complete the task after having done it enough to memorize the steps. When you are working on the task without thinking too much about it, you have already created something of a function to do what you need to without thinking about each task. This brings us to our next question...
+
+	What is a function and why does it exist?
+		Functions allow less repetition and more organization of code. If the function is supposed to send information back to the variable you're calling the function for, make sure to put a `return` then the value you wish to return, or else nothing will go back to the variable. However, the function can just be used to print values instead of returning any values.
+
+	How to define
+		def add(param0, param1):
+			sum = param0 + param1
+			return sum
+
+	How to call:
+		sum = add(2, 3)
+
+	Sure a function is helpful, but would you do laundry the same for each type of clothes? Sometimes clothes can be finicky and will require different tasks to complete the current batch of laundry. Sometimes they require a specific type of soap, temperature, time to dry, etc. This can be categorized by shirts made of different material, such as the cleaning difference between wool and cotton materials. Classes work similarly. You can have two different classes in this case, each having a function that is named `clean()` but they both have different instructions to complete what the function is labeled to do.
+
+	What is a class and why does it exist?
+		Classes are objects that you can create to hold other objects and functions for later use.
+
+		The `self` variable
+			`self` is what is needed to assign the variable to the class in order to access it without needing to pass it through as a variable to another function. However, this is only possible to do within the same class it was declared within!
+
+		For instance, what if you want to have a class for each car you want to look at? There will need to be a string that has the name, maybe an int for the number of seats, then a float for the number of miles that the car gets to the gallon. But how do you get each of these values? You can make one or more function within the class to get that information!
+
+	How to define
+		class wool_cloth:
+			def __init__(self, cloth):
+				#values to hold in the class
+				#Private
+				self._cloth_type = cloth
+				self._soap = "unscented shampoo"
+				self._temp_wash = "cool"
+				#Public
+				self.shouldDry = False
+
+			#Process to clean
+			def clean(self):
+				#Instructions to clean wool clothes
+	How to call
+		laundryType = wool_cloth("shirt")
+
+
+	Private/Public variables
+		When working on building a class, you can make variables accessible outside of the class, but you can alse make them unavailable outside as well. The use of this is to make the objects themselves unavailable from being called outside of the class.
+
+	How to define each
+		The difference is one underscore in front of the variable name.
+			Public
+				self.shouldDry = False
+
+			Private
+				self._soap = "unscented shampoo"
+
+	LAB TIME!! (Remember to look over the notes if stuck!)
+
+		-Create class to define a car of your choosing
+		-In the class, make five private variables...
+		--model
+		---Model of the car, taken upon calling class object (ex. `laundryType = wool_cloth("shirt")`)
+		--door
+		---Number of doors on car
+		--window
+		---Number of windows on car (if it's glass, assume it's a window).
+		--wheelAmount
+		---Number of wheels on car
+		--seatNumber
+		---Number of seats in car
+		-In the class, make one public variable...
+		--passengerNumber
+		-In the class, make five functions(keep in mind the `self` variable)
+		--getModel()
+		---Return the car model
+		--getDoor()
+		--Return the amount of doors on car
+		--getWindow()
+		---Return the amount of windows on car (If it is glass and on the side of the car, assume it is considered a window).
+		--getWheelAmount()
+		---Return the amount of wheels on the car
+		--getSeatNumber()
+		---If the amount of passengers is equal to or less than, return the number of seats in car, else print "There are not enough seats!"
+		-Outside of the class, call and assign the car class you created
+		--car = car("Xterra 1999")
+		--Assign the public variable the amount of passengers that are in your car
+		--Use the object and functions created to print this menu...
+
+		~Car info~
+		----------
+		Model		Xterra 1999
+		Doors		4
+		Windows		8
+		Wheels		4
+		Seats		4
+		Passengers	3
+
+	CHALLENGE TIME
+		-Follow the LAB, but this time...
+		--Remove the model init parameter variable
+		--make setter functions that take and set a value for each private variable
+		---setDoors(doorNum)
+		---setWindows(windowNum)
+		---setWheels(wheelNum)
+		---setSeats(seatNum)

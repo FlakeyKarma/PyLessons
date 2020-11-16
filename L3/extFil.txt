@@ -1,0 +1,83 @@
+lesson-3:extFil
+	-Introduction
+	-Modules how to...
+	--Make
+	--Import
+	--Install
+	--Uninstall
+
+Introduction
+	As I stated in the beginning L0, one of Python's greatest aspects is the ability to utilize modules. The beauty of using modules is being able to use code written by someone else to complete the desired task rather than needing to write code on your own to complete the task. Thanks to this, there's no need to reinvent the wheel. With this lesson, you will learn how to make/refer to your own external files, and to install/uninstall modules using `pip`.
+
+Modules 101
+	In order to make your own external files to import, you need to make another python file from your main. When making this file, ensure that it is used to organize whatever you need to have with that given set of code to be imported. By doing this, it will help by making the classes and functions needed to be more accessible.
+
+	ex.
+		The desired outcome is to put the Car class in the Car.py file to be imported and used the same. By not having the Car class in the main.py file, it will make reading the code for each much easier.
+
+		main.py - Main code to be ran.
+		Car.py	- Other code needed for main to run as desired.
+
+	When referring to the external file/module, you will have to put an `import <MODULE>` above the line and at the same of lower indentation level that you wish to use the external code at.
+
+	ex.
+		main.py
+			import Car
+
+			car = Car("Xterra 1999")
+
+		Car.py
+			class Car:
+				def __init__(self):
+					#initial variables
+
+				def getModel(self):
+					return self.model
+
+				#Rest of get functions
+
+	Installation
+		To install modules with the command line, first ensure that `pip` is in your PATH.
+			Windows
+				Update environment variables as explained in L0.
+			Linux
+				Install with package manager.
+
+		Next, type "pip install <MODULE>" to install the given package (pip install pandas).
+
+	Removal
+		Type "pip uninstall <MODULE>" to uninstall given package (pip uninstall pandas).
+
+	LAB!!(This may get a bit dizzying for a bit, just remember to re-read through the text and look at the examples)
+
+	-First, make the jacket.py file!
+	--Make jacket.py file
+	---Make a jacket class
+	----Make five private variables (each being empty)
+	-----size
+	------Jacket size (L,M,S)
+	-----pocketNumber
+	------Number of pockets
+	-----secureType
+	------How the jacket is secured (zipper, buttons, etc.)
+	-----color
+	------Color of jacket
+	-----material
+	------Main material of jacket
+	----Make a jacketCreation() function that takes five values then populates the private class variables.
+	----Make a jacketPrint() function that prints the jacket info...
+
+	JACKET DESC.
+	------------
+	size		L
+	pockets		3
+	type		zipper
+	color		brown
+	material	leather
+
+	-Next, make the main.py file
+	--import the jacket file
+	--Make a jacket object
+	--Call jacketCreation() function with the new jacket object
+	---Assign the variables to the class object by putting desired variables into the jacketCreation() function
+	--Call the jacketPrint() function with the jacket object

@@ -1,0 +1,138 @@
+lesson-0:helloWorld
+	-Introduction
+	--Programming
+	---Origins
+	---Programming paradigms
+	----What different languages are there and why?
+	--Python
+	---How and why it was created.
+	--syntax
+	---How and why to follow it.
+	--commenting
+	---How and why, as a developer, it is imperative to do so.
+	--Naming convention
+	---Files, Classes, Functions, Variables
+	--characters
+	---Use and special characters
+	--strings
+	---The data-type to make human interaction with program easier for programmer
+	-input
+	-printing
+	-How to proceed to labs...
+	-LAB TIME!!
+	--Identify how to...
+	---Start a main.py file
+	----Comment what the file is used for
+	---Indent something nested
+	----Comment what the conditional is supposed to be
+	---Declare a variable
+	----Comment what the variable is
+	---Take input for the variable declared, and print what to be taken for input
+	----Comment what the input is meant to be, even though it may seem obvious
+	---Print both ("Hello world of " + name "!") and ("Hello world of", name, "!")
+	----Comment the reason for the print
+Intro
+
+	Programming
+		The world of programming is everywhere in everyday life. From the gaming console you play on, to the embedded system of a Tesla. The reason for programming to even exist in the first place is to make a task easier for whomever is utilizing the given software. For instance, why spend time trying to call stores and find what the best price for an item, when you could just look it up on different sites?
+
+	Origins
+		Without getting too historical, programming has gone through many stages. First, starting with Charles Babbage and his "Difference Engine," designed solely for mathematical computations (computerhistory.org), then to the first electric form of programmability being the ENIAC machine from 1940s (Freiberger, P. A., & Swaine, M. R.), and slowly forming into the software, firmware, and hardware world we know today (There are many more improvements from the INIAC machine that lead up to this point, but that would be a history class, this is just a very rough origins explanation).
+
+	Programming Paradigms
+		What different Types of Languages Are There?
+			There are many languages, each with their own use as individual tools for their own purpose (with some overlap in certain areas). But rather than covering each area, we'll focus on the main paradigms of the modern day that encompass languages created (Pankaj).
+
+			Imperative	- Set up a list of operations to occur(Batch Scripting)
+			Declarative	- Set what the ouput should contain, now how to get there(SQL)
+			Structured	- Set up subroutines for code execution(C/C++)
+			Procedural	- Set up functions of code to execute when called(BASIC)
+			Object Oriented	- Set up "objects" to contain values and functions to call(Python)
+			Functional	- Set up functions that output another function's input(Lisp)
+
+	Python
+		This language was created in the 80's for a higher-level language to help Guido Van Ross, the creator, pass the time over Christmas (SohomPramanick). The idea behind it is to create a high-level programming language (level of the language is how close it is to a spoken language, Python is high-level due to how close it is to English) that is able to do what you want, just with less lines. Due to the ease of implementation that comes with the language, along with the numerous and various pip packages ("pip" is foreign for now, but it will be discussed in a later lesson) it is known for, Python has been used for multitudes of applications. Python is a scripting language, meaning that it is interpreted by an interpreter which goes through the process of conversion from the text you type in to machine language.
+
+	Onto the language
+		With a basic history and high-level intro out of the way, lets get into the main topics needed when getting into writing any program to run.
+
+	Syntax
+		Syntax is the structure of a language. In a way, it's like a car frame. There is a flooring area, and there is a roofing area. Can you put the roof where the floor is supposed to be and the floor where the roof is supposed to be? Sure you can, but with how cars are usually made, there could be complications later on when trying to put the other parts intended for a car with the roof put in the roofing area and the floor put in the flooring area. Syntax for programming works the same way. Functions, classes, modules, variables, etc. are all meant to be organised in a specific fashion to allow the interpreter to read what you want the computer to do, otherwise there will be the "Syntax Error" complication to follow if you don't follow the syntax. (i.e. when assigning a variable, typing it like 'age = 15' is correct syntax because it is assigned in a 'VARIABLE = VALUE' format, but it can't be assigned '15 = age' because that's not how the interpreter will be able to understand it).
+
+	Commenting
+		Comments are absolutely necessary. No matter what anyone tells you, know that comments are some of the best pieces of a program to be incorporated. For example, if you write a program and stop working on it for any reason for a long period of time, the chances that you'll remember what you were thinking when you started it are slim to none. Or, maybe you're working on it with one or more people. In either case, commenting will help for understanding what the code does without needing to read through it and piece together what the project was supposed to accomplish. Always comment on files, classes, and functions (use descretion to comment on variables, there may be no need if the variable is obvious... i.e. "name = 'Jacob'" is an obvious one, no need to comment there).
+
+	Naming Conventions
+		When naming classes, functions, and variables, name them to help identify what they do. Comments are great, but labeling each gear in a mechanism will help the reader know what the data is and why the data is being altered the way it is. However, when labeling files, always name the main file "main.<FILE EXTENSION>" (FILE EXTENSION is the suffix of the file, for instance: .txt is for text files, .docx is for Microsoft Word files, .py is for Python files, and .java is for Java files).
+
+	Into the language
+		From here we venture from some main concepts needed to help construct a program properly, now we move a bit into a couple data-types as to what they are and what they do.
+
+	Characters - char
+		Yes, this identifies single letters and single numbers, but there is a second type of characters. The second type is called "escape characters." The use for the second type is one of the ways to format strings of characters (covered in next topic). A list of a few main characters is ['\t', '\n', '\r', '\\']. '\t' is used to insert a tab in the output. '\n' is for 'newline,' similar to pressing the enter key in the output. '\r' is for 'return carriage,' it takes the caret(AKA cursor seen while typing) to the beginning of the same line that it currently is sitting on. '\\' is used to cancel the second slash from being interpreted as the slash to make the character after it an escape character. You may have noticed that each of these have more than one character, yet they are still considered characters. Before you question everything you're learning, here's the reasoning behind it. The interpreter is taking these and converting the combination of the slash with whatever character that follows with a specifc ASCII code that was assigned to it.
+
+	Strings - str
+		Strings are a collection of characters (otherwise known as a string of characters). The use is to hold more than one character. From a word to an essay of words, these data-types are great for storing the items until later manipulation or display without needing to compare each character so tediously.
+
+	Into the Programming
+		Here, we move into the actual action.
+
+	Text input - input("prompt> ")
+		This function first prints whatever string you put in the `prompt` argument for the function, then takes whatever you type in and sends it to the variable that is being assigned via the input function.
+
+	Text Output - print("lorem ipsum")
+		This function can take multiple arguments for concatenation, but can also take concatenation with `+` in between strings in each argument as well. The difference is that each comma will automatically put a space between each argument when concatenating, but with `+` the strings are concatenated with characters provided.
+
+	How to proceed to labs...
+		You're almost to the programming portion, but first you must set up an environment that will allow you to code. There are a few ways to accomplish this.
+			Text Editor
+				This is a great environment to help the coder better understand how and why everything works the way it does in a program. When running the script, the coder must run the "python" command in their shell/command prompt prior to the python file to execute the code (i.e. "python main.py"). This route can be a bit more difficult to start at, but requires less system resources to run overall.
+					How to set up:
+						text editor:
+							atom
+								https://flight-manual.atom.io/getting-started/sections/installing-atom/#platform-windows
+							Notepad
+								It's already installed on Windows devices.
+							Notepad++
+								https://npp-user-manual.org/docs/getting-started/
+							Vim (It's a bit of a setup for Windows, and it has a bit of a learning curve, but will pay off should you continue this path.)
+								https://medium.com/@saaguero/setting-up-vim-in-windows-5401b1d58537
+							And many more...
+						python add to PATH:
+							https://geek-university.com/python/add-python-to-the-windows-path/
+
+			IDE - Integrated Development Environment
+				This is a great environment to help you along the way, between highlighting the mistakes made in the beginning to aid in the process of creating a fully functioning program. To run the program, often there is a button to click that will allow the user to run the code in/from the IDE window itself. But this comes at the loss of developing an eye and personal understanding for the language itself and uses a few more resources to run.
+					Examples:
+						Pycharm
+							https://www.jetbrains.com/help/pycharm/installation-guide.html#
+						VSCode
+							https://youtu.be/gD8WhXwLVlU
+						http://repl.it/languages/python3
+							This is an online IDE, no need to install anything, but may take a bit more time due to network and computer resources.
+						And many more...
+
+			(Disclaimer: The resource usage may not seem like much, but when the code gets more elaborate, the IDE may not be the best to use with less system resources.)
+	LAB TIME!!
+		Time to complete the puzzle (Remember to review the content above, should you get stuck!):
+			-On your desktop, right click to open a menu, it should display an option that prompts you to make a folder, then name it "Lesson_0"
+			-In the "Lesson_0" folder, right click inside the window, finally make a file named "main.py"
+			-Print "Hello world!"
+			-Print a request for the user's first name, then their second name.
+			-Assign variable with fist name and last name concatenated (with space between both).
+			-Make a variable to take the name of the user.
+			-Print the user's name like this first using comma concatenation, then `+` concatenation, the a combination. The message printed should resemble "Hello there, <NAME>!" (i.e. "Hello there, Jake!")
+			-Remember to comment where necessary!
+
+		CHALLENGE TIME
+			This part wasn't completely covered in the topics, so it may require a tiny search to get this. (Do everything that was in the first part of the lab, but here are a few adjustments)
+
+			-Take the users names for input, but also get the age as well.
+			-When you get their age, assign a variable what year they were born. (HINT: Subtract the current year from their age)
+			-Finally, in the print section, add another print function, but this time print "And I know you were born in <BIRTH YEAR> too!"
+
+BIBLIOGRAPHY
+	- computerhistory.org (n.d.). The Engines. Retrieved April 29, 2020, from https://www.computerhistory.org/babbage/engines/
+	- Freiberger, P. A., & Swaine, M. R. (2018, October 26). ENIAC. Retrieved April 29, 2020, from https://www.britannica.com/technology/ENIAC
+	- Pankaj. (2018, October 13). Various programming paradigms. Retrieved April 29, 2020, from https://codeforwin.org/2017/05/various-programming-paradigms.html
+	- SohomPramanick. (2019, May 6). History of Python. Retrieved April 29, 2020, from http://www.geeksforgeeks.org/history-of-python

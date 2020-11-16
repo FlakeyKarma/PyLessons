@@ -1,0 +1,98 @@
+lesson-4:rwfile
+	-Introduction
+	-What is a text file?
+	-What is the use of a text file?
+	--Access types for files
+	--How to read from a file
+	--How to write to a file
+	--How to log data
+	-LAB!
+
+Introduction
+	When you make a purchase, do you ever give the cashier more money than what you are charged? Besides giving tips for restaurants, most of the time a person would prefer not to give more than what is necessary, and maybe less if discounts are possible. Computer resources are treated similarly. A text-based file is the most basic file type to store information in due to it's text-only aspect.
+
+What is the use of a text file?
+	Due to the minimal amount of space the file takes up and resources it takes to edit/read from it, the text file is an amazing candidate for quick storage of various pieces of text to store.
+
+	There area a few choices for file access types to keep in mind (Morales, M.)...
+		r	-	Read only access
+		w	-	Write only access
+		a	-	Append text
+		x	-	Create/Write access
+		r+	-	Read/Write access
+
+
+	How to read from a file
+		ex.0
+			#Open file code within the nested area of the `with open...` code, then it will automatically close once nested area is completed
+			with open("file.txt", 'r') as FIL:
+				print(FIL.read())
+				#Code with FIL open
+
+		ex.1
+			#Open the file as read-only
+			FIL = open("file.txt", 'r')
+
+			#Code with FIL open
+			#Close FIL object
+			FIL.close()
+
+	How to write to file
+		ex.0
+			#Similar to the read-only, but the 'w' overwrites the text already in the file
+			with open("file.txt", 'w') as FIL:
+				print("What would you like to write to the file?")
+				text = input("> ")
+				FIL.write(text)
+		ex.1
+			FIL = open("file.txt", 'w')
+
+			#Code with FIL open
+
+			#Close FIL object
+			FIL.close()
+
+	How to log information
+		ex.0
+			import platform,os
+
+			FIL = open("computer_info.log", 'x')
+			#Code getting computer information
+			FIL.write("OS:%s%s%s" % (platform.system(), platform.release(), os.name))
+			#Code getting other info...
+			FIL.close()
+
+LAB TIME!!
+	-Make two files, a main file and a resources file
+	-In the resources file...
+	--Make a class named `F_MK`
+	---Make the init function for the `self.filepath` variable for the path of the desired text file location 
+	---Make a function named `makeFil` that will make the file(using self.filepath) then close the file object
+	--Make a class named `F_IN`
+	---Make the init function for the `self.filepath` variable for the path of the desired text file location
+	---Make a function named 'writeTo` to that takes text as a parameter and writes it to the text file(using self.filepath) then closes it when done
+	--Make a class named `F_OT`
+	---Make the init function for the `self.filepath` variable for the path of the desired text file location
+	---Make a function named `readFil` that will read from the file(using self.filepath) then close file object
+	-In main file...
+	--import the resources file
+	--Use the `F_MK` class to...
+	---Make the text file to use
+	--Use the `F_IN` class to...
+	---Write to the file some Car names using a while loop that breaks when `END` is entered
+	--Use the `F_OT` class to...
+	---Print 'Some fo My Favorite Cars' and the text like this (Remember to look over the special characters if the printed words end up on the same line!)...
+		Some of My Favorite Cars
+		------------------------
+		Nissan Xterra
+		Honda Civic
+		Subaru WRX
+		...
+		
+CHALLENGE TIME
+	-Follow the steps from the original lab, but next...
+	-Get the time and date that the information is entered as well
+	-When writing to file, make the format match something similar to a `[year/month/day/hour:minute:second] <CAR>` (ex. `[2020/6/1/14:23:35] Nissan Xterra`)
+
+Bibliography
+-	Morales, M. (2016, October 13). How to Read and Write in Python 3 [Web log post]. Retrieved June 16, 2020, from https://www.digitalocean.com/community/tutorials/how-to-handle-plain-text-files-in-python-3
